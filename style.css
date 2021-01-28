@@ -41,7 +41,7 @@ body{
     font-size: 20px;
 }
 .input-group{
-	width: unset;
+	width:unset;
 }
 .status{
 	text-align: right;
