@@ -78,6 +78,16 @@
       </div>
    </section>
    <script>
+                 // plus button for case of mobile phone
+          const casePlusButton=document.getElementById('case-plus-button')
+       casePlusButton.addEventListener('click', function(){
+         const caseInput=document.getElementById('case-input').value;
+         const caseCount=parseInt(caseInput);
+         const caseNewCount= caseCount + 1;
+         document.getElementById("case-input").value=caseNewCount;
+         
+       })
+             //plus button for mobile phone
       const addBtn=document.getElementById('plusButton');
       addBtn.addEventListener("click",function(){
          const addProduct=document.getElementById("productNumber").value;//const a=addProduct.value
@@ -87,19 +97,12 @@
          const totalCost=mobileNewCount*1219;
          document.getElementById("phonePrice").innerText=totalCost;
          const caseValue=document.getElementById('case-amount').innerText;
-         const caseAmount=parseInt(caseValue);
+        const caseAmount=parseInt(caseValue);
          const subTotal=caseAmount+totalCost;
          document.getElementById("sub-total").innerText='$'+ subTotal;
          
-        // plus button for case of mobile phone
-        const casePlusButton=document.getElementById('case-plus-button')
-       casePlusButton.addEventListener('click', function(){
-         const caseInput=document.getElementById('case-input').value;
-         const caseCount=parseInt(caseInput);
-         const caseNewCount= caseCount + 1;
-         document.getElementById("case-input").value=caseNewCount;
-         
-       })
+      
+        
       
       
       
