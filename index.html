@@ -25,7 +25,7 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button id="minusButton" class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="productNumber" type="text" class="form-control text-center" value="1">
                            <button id="plusButton" class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
@@ -44,11 +44,11 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text"  class="form-control text-center" value="1">
-                           <button  class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <input id="case-input" type="text"  class="form-control text-center" value="1">
+                           <button id="case-plus-button" class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
-                        <h5>$59</h5>
+                        <h5>$ <span id="case-amount">59</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -64,7 +64,7 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
+                        <h5 id="sub-total">$1,278</h5>
                         <h5>$0</h5>
                         <h5>$1,278</h5>
                      </div>
@@ -86,14 +86,26 @@
          document.getElementById("productNumber").value=mobileNewCount;
          const totalCost=mobileNewCount*1219;
          document.getElementById("phonePrice").innerText=totalCost;
-       
-       
+         const caseValue=document.getElementById('case-amount').innerText;
+         const caseAmount=parseInt(caseValue);
+         const subTotal=caseAmount+totalCost;
+         document.getElementById("sub-total").innerText='$'+ subTotal;
+         
+        // plus button for case of mobile phone
+        const casePlusButton=document.getElementById('case-plus-button')
+       casePlusButton.addEventListener('click', function(){
+         const caseInput=document.getElementById('case-input').value;
+         const caseCount=parseInt(caseInput);
+         const caseNewCount= caseCount + 1;
+         document.getElementById("case-input").value=caseNewCount;
+         
+       })
       
       
       
         
         
-      })
+     })
    </script>
 </body>
 
