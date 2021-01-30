@@ -1,5 +1,8 @@
 body{
-	background: #fff;
+	background-color: #1AA99D;
+}
+.color-cart{
+	background-color: #FBE9D8;
 }
 .cart{
 	margin: 100px 0;
